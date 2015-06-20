@@ -2,7 +2,7 @@ shopping_list = []
 
 def show_help():
     print("What should we pick up at the store?")
-    print("Enter DONE to stop.")
+    print("Enter DONE to stop, HELP for help, SHOW to see list.")
 
 def add_to_list(item):
     shopping_list.append(item)
@@ -20,6 +20,13 @@ while True:
     if new_item == 'DONE':
         show_list()
         break
+    elif new_item == 'HELP'
+        show_help
+        continue
+    elif new_item == 'SHOW'
+        show_list
+        continue
+
     add_to_list(new_item)
     continue
 
