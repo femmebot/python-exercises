@@ -23,6 +23,7 @@ for item in shopping_list:
         my_list = my_list + item
     else:
         my_list = my_list + item + ", "
-        count = count + 1
+        # count = count + 1
+        count += 1
 
 print(my_list)
