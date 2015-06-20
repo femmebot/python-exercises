@@ -3,6 +3,7 @@ import random
 
 num_of_guesses = 0
 random_num = 0
+max_guesses = 5
 
 # generate a random number between 1 and 10
 # def generate_random_num():
@@ -23,10 +24,20 @@ instructions()
 random_num = random.randint(1,10)
 # print(random_num)
 
-while num_of_guesses < 5 :
-    new_input = int(input("> "))
+while num_of_guesses < max_guesses:
+    # print("Random number: {}".format(random_num))
+
+    try:
+        new_input = int(input("> "))
+    except:
+        print ("That's not a number. Try again.")
+        break
+
+    if new_input < 1 or new_input > 10:
+        print("That number is outside the range of 1-10.")
+        break
+
     num_of_guesses = num_of_guesses + 1
-    print("Random number: {}".format(random_num))
 
     if new_input == random_num:
         print ("You guessed the number {} correctly!".format(random_num))
@@ -39,8 +50,7 @@ while num_of_guesses < 5 :
         print ("Your guess is higher")
         show_guesses()
         continue
-    else:
-        print ("That's not a number. Try again.")
+
 
 
 if num_of_guesses == 5:
