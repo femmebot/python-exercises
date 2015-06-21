@@ -17,3 +17,16 @@ print (joined_sentence)
 
 split_sentence = my_sentence.split(sep="!")
 print(split_sentence)
+
+list_1 = list(range(3))
+list_2 = list(range(3,6))
+# list_3 = list_1 + list_2
+list_3 = list_1
+list_3.extend(list_2)
+print(list_3)
+
+
+
+alpha = list('acdf')
+alpha.insert(1, 'b')
+print(alpha)

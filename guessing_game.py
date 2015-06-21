@@ -40,7 +40,10 @@ while num_of_guesses < max_guesses:
     num_of_guesses = num_of_guesses + 1
 
     if new_input == random_num:
-        print ("You guessed the number {} correctly!".format(random_num))
+        if num_of_guesses == 1:
+            print("You guessed the number {} correctly in 1 guess!".format(random_num))
+        else:
+            print ("You guessed the number {} correctly in {} guesses!".format(random_num, num_of_guesses))
         break
     elif new_input < random_num:
         print ("Your guess is lower.")

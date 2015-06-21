@@ -35,8 +35,6 @@ while True:
             for item in new_list:
                 shopping_list.insert(spot, item.strip())
                 spot += 1
-            else:
-                for item in new_list:
-                    shopping_list.append(item.strip)
-
-        
+        else:
+            for item in new_list:
+                shopping_list.append(item.strip())
