@@ -33,3 +33,8 @@ def members(my_dict, my_list):
     return(count)
 
 members(sample_dict, sample_list)
+
+my_account = {'username': 'femmebot', 'email': 'femmebot@gmail.com'}
+my_account.update({'gender': 'female', 'firstname': 'Phoebe', 'lastname': 'Espiritu'})
+
+print(my_account)
