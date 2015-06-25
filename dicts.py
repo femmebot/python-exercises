@@ -7,6 +7,9 @@ phone_dict = { 'phone': { 'home': '201-222-7881', 'mobile': '703-867-1980'} }
 print (phone_dict['phone'])
 print (phone_dict['phone']['mobile'])
 
+my_car = { 'color': 'blue'}
+my_car['color'] = 'red'
+
 
 # Write a function named members that takes two arguments,
 # a dictionary and a list of keys. Return a count of how many
