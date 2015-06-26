@@ -39,8 +39,11 @@ members(sample_dict, sample_list)
 
 my_account = {'username': 'femmebot', 'email': 'femmebot@gmail.com'}
 my_account.update({'gender': 'female', 'firstname': 'Phoebe', 'lastname': 'Espiritu'})
-
 print(my_account)
+
+# Unpacking a dictionary
+greeting = "Hello! My name is {firstname} and my username is {username}"
+print(greeting.format(**my_account))
 
 
 # Create a function named word_count() that takes a string.
