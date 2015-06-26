@@ -55,7 +55,7 @@ print(my_account)
 # check for inclusion in the dict (with "if word in dict"-style syntax).
 # Or add it to the dict with something like word_dict[word] = 1.
 
-my_sentence = 'Hello Hello I am what I am'
+my_sentence = input('> ')
 
 def word_count(my_string):
     word_list = (my_string.lower()).split()
