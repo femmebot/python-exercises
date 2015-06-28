@@ -33,3 +33,25 @@ def stringcases(my_string):
 string_input = input('> ')
 stringcases(string_input)
 print(stringcases(string_input))
+
+
+# enumerate() A function that takes a iterable, like a list,
+# and gives back a list of tuples where each tuple holds
+# the index of the item and its value.
+
+my_account = {'username': 'femmebot', 'email': 'femmebot@gmail.com'}
+my_account.update({'gender': 'female', 'firstname': 'Phoebe', 'lastname': 'Espiritu'})
+alpha_list = list('abcdefghijklmnopqrstuvwxyz')
+
+for index, letter in enumerate(alpha_list):
+    print('{}: {}'.format(index, letter))
+
+# step is a tuple
+for step in enumerate(alpha_list):
+    print('{}: {}'.format(step[0], step[1]))
+
+for step in enumerate(alpha_list):
+    print('{}: {}'.format(*step)) # one star unpacks tuples or lists; 2 stars, dicts
+
+for key, value in my_account.items():
+    print('{}: {}'.format(key.title(), value))
