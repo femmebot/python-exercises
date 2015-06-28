@@ -53,5 +53,5 @@ for step in enumerate(alpha_list):
 for step in enumerate(alpha_list):
     print('{}: {}'.format(*step)) # one star unpacks tuples or lists; 2 stars, dicts
 
-for key, value in my_account.items():
+for key, value in my_account.items(): # loop through and unpack tuples from a dictionary
     print('{}: {}'.format(key.title(), value))
