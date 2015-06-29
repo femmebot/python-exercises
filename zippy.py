@@ -8,12 +8,24 @@
 # If you use list.append(), you'll want to pass it a tuple of new values.
 # Using enumerate() here can save you a variable or two.
 
-def combo(my_combo):
-    new_combo = []
-    for step in enumerate(my_combo):
-        new_combo.append((step[1]))
-    return(new_combo)
+# dict.items() - A method that returns a list of tuples from a dictionary.
+# Each tuple contains a key and its value.
 
-combined_list = (['swallow', 'snake', 'parrot'], ['a', 'b', 'c'])
-combo(combined_list)
-print(combo(combined_list))
+def combo(list1, list2):
+    combined_list = []
+    print(combined_list)
+    for item1, item2 in enumerate(list2):
+        print(item1, item2)
+        temp_list = (list1[item1], item2)
+        combined_list.append(temp_list)
+    print(combined_list)
+    return (combined_list)
+
+
+
+    # return(new_combo)
+
+list1 = ['swallow', 'snake', 'parrot']
+list2 = ['a', 'b', 'c']
+combo(list1, list2)
+# print(combo(combined_list))
