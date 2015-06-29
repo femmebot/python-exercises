@@ -21,11 +21,11 @@ def combo(list1, list2):
     print(combined_list)
     return (combined_list)
 
-
-
-    # return(new_combo)
-
 list1 = ['swallow', 'snake', 'parrot']
 list2 = ['a', 'b', 'c']
 combo(list1, list2)
+
+# alternate solution using zip()
+list3 = zip(list1, list2)
+print (list(list3))
 # print(combo(combined_list))
