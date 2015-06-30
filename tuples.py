@@ -53,5 +53,7 @@ for step in enumerate(alpha_list):
 for step in enumerate(alpha_list):
     print('{}: {}'.format(*step)) # one star unpacks tuples or lists; 2 stars, dicts
 
+# dict.items() - A method that returns a list of tuples from a dictionary.
+# Each tuple contains a key and its value.
 for key, value in my_account.items(): # loop through and unpack tuples from a dictionary
     print('{}: {}'.format(key.title(), value))
