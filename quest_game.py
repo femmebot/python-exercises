@@ -15,9 +15,20 @@ def make_grid(row, col):
     grid_list = []
     for row_item in row:
         for col_item in col:
-            temp_list = row_item, col_item
-            grid_list.append(temp_list)
+            coords = row_item, col_item
+            grid_list.append(coords)
     return(grid_list)
 
-make_grid(my_row, my_col)
-print(make_grid(my_row, my_col))
+game_coords = make_grid(my_row, my_col)
+# print(make_grid(my_row, my_col))
+
+def generate_locations(coordinates):
+    my_coords = coordinates[:]
+    door = random.choice(my_coords)
+    my_coords.remove(door)
+    monster = random.choice(my_coords)
+    # print(my_coords)
+    # print(door, monster)
+    return(door, monster)
+
+generate_locations(game_coords)
