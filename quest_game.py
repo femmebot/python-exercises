@@ -10,6 +10,7 @@ import random
 # make a 6x6 grid
 my_row = list('abcdef')
 my_col = list(range(1,7))
+coords = []
 
 def make_grid(row, col):
     grid_list = []
