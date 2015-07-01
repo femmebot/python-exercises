@@ -20,9 +20,6 @@ def make_grid(row, col):
             grid_list.append(coords)
     return(grid_list)
 
-game_coords = make_grid(my_row, my_col)
-# print(make_grid(my_row, my_col))
-
 def generate_locations(coordinates):
     my_coords = coordinates[:]
     door = random.choice(my_coords)
@@ -32,4 +29,24 @@ def generate_locations(coordinates):
     # print(door, monster)
     return(door, monster)
 
+game_coords = make_grid(my_row, my_col)
+# print(make_grid(my_row, my_col))
+
 generate_locations(game_coords)
+
+#######
+
+my_list = list(range(1, 51))
+my_int = int(input('> '))
+# my_int = random.randint(1,10)
+
+def nchoices(my_iterable, n):
+    counter = 0
+    choices = []
+    while counter < n:
+        choices.append(random.choice(my_iterable))
+        counter += 1
+    return(choices)
+
+nchoices(my_list, my_int)
+print(nchoices(my_list, my_int))
