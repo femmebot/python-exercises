@@ -11,6 +11,7 @@ import random
 my_row = list('abcdef')
 my_col = list(range(1,7))
 coords = []
+my_move = list(input('> '))
 
 def make_grid(row, col):
     grid_list = []
@@ -29,10 +30,25 @@ def generate_locations(coordinates):
     # print(door, monster)
     return(door, monster)
 
+def game_rules():
+    print("You're in a 6x6 room, with cells A-F across and 1-6 from top to bottom.")
+    print("You need to find the door by entering the secret cell coordinates, i.e., A1 for the top left cell. ")
+    print("But, be careful and don't enter the coordinates for the monster instead!")
+    print("Type HELP to view these rules, QUIT to end the game.")
+
+
+# error-check input
+# no more than 2 characters; require letter (A-F), then number (1-6)
+#
+
+
+# generate the coordinates for the game
 game_coords = make_grid(my_row, my_col)
 # print(make_grid(my_row, my_col))
 
+# generate the coordinates for the door and the monster
 generate_locations(game_coords)
+
 
 #######
 
