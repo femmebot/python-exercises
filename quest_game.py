@@ -45,12 +45,12 @@ def game_rules():
 
 
 def check_bounds(player_coords):
-    MOVES = ('LEFT', 'RIGHT', 'UP', 'DOWN')
+    MOVES = ['LEFT', 'RIGHT', 'UP', 'DOWN']
     # If player x-coordinate is at 1, remove LEFT
     # If player x-coordinate is at 6, remove RIGHT
     # If player y-coordinate is at 1, remove UP
     # If player y-coordinate is at 6, remove DOWN
-
+    return MOVES
 
 
 
