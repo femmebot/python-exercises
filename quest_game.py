@@ -8,31 +8,72 @@
 import random
 
 # make a 6x6 grid
-my_row = list('abcdef'.upper())
-my_col = list(range(1,7))
-coords = []
+x_row = list(range(1,7))
+y_col = list(range(1,7))
+grid_list = []
+init_pos = []
+# my_move = list(input('> '.upper()))
 
-def make_grid(row, col):
-    grid_list = []
-    for row_item in row:
-        for col_item in col:
+def make_grid():
+
+    for row_item in x_row:
+        for col_item in y_col:
             coords = row_item, col_item
             grid_list.append(coords)
     return(grid_list)
 
-def generate_locations(coordinates):
-    my_coords = coordinates[:]
+def generate_locations():
+    my_coords = grid_list[:]
     door = random.choice(my_coords)
     my_coords.remove(door)
     monster = random.choice(my_coords)
-    # print(my_coords)
-    # print(door, monster)
-    return(door, monster)
+    my_coords.remove(monster)
+    init_pos = random.choice(my_coords)
+    print(door, monster, init_pos)
+    return door, monster, init_pos
 
-game_coords = make_grid(my_row, my_col)
-print(make_grid(my_row, my_col))
 
-generate_locations(game_coords)
+def game_rules():
+    print("You're in a 6x6 grid, with x 1 - 6 rows across and y 1 - 6 columns from top to bottom.")
+    print("You need to move UP, DOWN, LEFT or RIGHT to find the door.")
+    print("But, be careful and don't enter the coordinates for the monster instead!")
+    print("Type HELP to view these instructions, QUIT to end the game.")
+
+# Get player's current location
+# Check to see if location is at the edge, i.e., x or y is at 1 or 6
+# and only permit moves that are within bounds
+
+
+def check_bounds(player_coords):
+    MOVES = ('LEFT', 'RIGHT', 'UP', 'DOWN')
+    # If player x-coordinate is at 1, remove LEFT
+    # If player x-coordinate is at 6, remove RIGHT
+    # If player y-coordinate is at 1, remove UP
+    # If player y-coordinate is at 6, remove DOWN
+
+
+
+
+
+# generate the coordinates for the game
+game_coords = make_grid()
+print(make_grid())
+
+# generate the coordinates for the door and the monster
+door, monster, init_pos = generate_locations()
+print(door, monster, init_pos)
+
+# If LEFT, y = -1. If RIGHT, y = +1
+# If UP, x = -1. If DOWN, x = +1
+# error-check input
+check_bounds()
+
+def move(your_move):
+    while your_move != 'QUIT':
+        if your_move == 'HELP':
+            game_rules()
+
+
 
 #######
 
