@@ -39,39 +39,50 @@ def game_rules():
     print("But, be careful and don't enter the coordinates for the monster instead!")
     print("Type HELP to view these instructions, QUIT to end the game.")
 
-# Get player's current location
-# Check to see if location is at the edge, i.e., x or y is at 1 or 6
-# and only permit moves that are within bounds
-
-
-def check_bounds(player_coords):
-    MOVES = ['LEFT', 'RIGHT', 'UP', 'DOWN']
-    # If player x-coordinate is at 1, remove LEFT
-    # If player x-coordinate is at 6, remove RIGHT
-    # If player y-coordinate is at 1, remove UP
-    # If player y-coordinate is at 6, remove DOWN
-    return MOVES
-
-
-
-
 # generate the coordinates for the game
 game_coords = make_grid()
 print(make_grid())
 
 # generate the coordinates for the door and the monster
-door, monster, init_pos = generate_locations()
-print(door, monster, init_pos)
+door, monster, player = generate_locations()
+print('door: {} monster: {} player: {}'.format(door, monster, player))
+x, y = player
+print('x: {} y: {}'.format(x, y))
+
+# Get player's current location
+# Check to see if location is at the edge, i.e., x or y is at 1 or 6
+# and only permit moves that are within bounds
+
+def check_bounds():
+    moves = ['LEFT', 'RIGHT', 'UP', 'DOWN']
+    # If player x-coordinate is at 1, remove LEFT
+    if player[0] == 1:
+        moves.remove('LEFT')
+    # If player x-coordinate is at 6, remove RIGHT
+    if player[0] == 6:
+        moves.remove('RIGHT')
+    # If player y-coordinate is at 1, remove UP
+    if player[1] == 1:
+        moves.remove('UP')
+    # If player y-coordinate is at 6, remove DOWN
+    if player[1] == 6:
+        moves.remove('DOWN')
+    print('Your current position is: {}. You can move {}.'.format(player, list(moves)))
+    return moves
+
 
 # If LEFT, y = -1. If RIGHT, y = +1
 # If UP, x = -1. If DOWN, x = +1
 # error-check input
+
 check_bounds()
 
 def move(your_move):
     while your_move != 'QUIT':
         if your_move == 'HELP':
             game_rules()
+
+
 
 
 
