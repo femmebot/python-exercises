@@ -8,7 +8,7 @@
 import random
 
 # make a 6x6 grid
-my_row = list('abcdef')
+my_row = list('abcdef'.upper())
 my_col = list(range(1,7))
 coords = []
 
@@ -30,15 +30,15 @@ def generate_locations(coordinates):
     return(door, monster)
 
 game_coords = make_grid(my_row, my_col)
-# print(make_grid(my_row, my_col))
+print(make_grid(my_row, my_col))
 
 generate_locations(game_coords)
 
 #######
 
 my_list = list(range(1, 51))
-my_int = int(input('> '))
-# my_int = random.randint(1,10)
+# my_int = int(input('> '))
+my_int = random.randint(1,10)
 
 def nchoices(my_iterable, n):
     counter = 0
