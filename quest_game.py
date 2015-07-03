@@ -27,9 +27,8 @@ def generate_locations(coordinates):
     my_coords.remove(door)
     monster = random.choice(my_coords)
     my_coords.remove(monster)
-    player_coords = random.choice(my_coords)
+    player = random.choice(my_coords)
     print(my_coords)
-    print(door, monster, player)
     return(door, monster, player)
 
 def game_rules():
@@ -41,14 +40,14 @@ def game_rules():
 # Get player's current location
 # Check to see if location is at the edge, i.e., x or y is at 1 or 6
 # and only permit moves that are within bounds
-def check_bounds(player):
-    if player == (1, ):
+def check_bounds(player_coords):
+    if player_coords[0] == 1:
         left_flag = True
-    elif player == (6, ):
+    elif player_coords[0] == 6:
         right_flag = True
-    if player == ( , 1):
+    if player_coords[1] == 1:
         up_flag = True
-    elif player == ( , 6):
+    elif player_coords[1] == 6:
         down_flag = True
     if left_flag and up_flag:
         print('Your current location is: {}. Type RIGHT or DOWN to move.'.format(player))
@@ -80,7 +79,8 @@ game_coords = make_grid(x_row, y_col)
 
 # generate the coordinates for the door and the monster
 generate_locations(game_coords)
-
+print(generate_locations(game_coords))
+print('player: {}'.format((generate_locations(game_coords)[2])))
 # If LEFT, y = -1. If RIGHT, y = +1
 # If UP, x = -1. If DOWN, x = +1
 # error-check input
