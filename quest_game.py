@@ -28,14 +28,14 @@ def generate_locations():
     monster = random.choice(my_coords)
     my_coords.remove(monster)
     init_pos = random.choice(my_coords)
-    print(door, monster, init_pos)
+    # print(door, monster, init_pos)
     return door, monster, init_pos
 
 
 def game_rules():
-    print("You're in a 6x6 grid, with x 1 - 6 rows across and y 1 - 6 columns from top to bottom.")
-    print("You need to move UP, DOWN, LEFT or RIGHT to find the door.")
-    print("But, be careful and don't enter the coordinates for the monster instead!")
+    print("You're in a 6x6 room and you need to find the door to escape.")
+    print("You may enter UP, DOWN, LEFT or RIGHT to move.")
+    print("But, be careful. There's also a monster in one of the cells.")
     print("Type HELP to view these instructions, QUIT to end the game.")
 
 
@@ -62,10 +62,6 @@ def check_bounds():
     return moves
 
 
-# If LEFT, y = -1. If RIGHT, y = +1
-# If UP, x = -1. If DOWN, x = +1
-# error-check input
-
 # generate the coordinates for the game
 game_coords = make_grid()
 print(make_grid())
@@ -87,7 +83,7 @@ while True:
 
     if move == 'HELP':
         game_rules()
-        
+
     elif move in check_bounds():
         if move == 'LEFT':
             x -= 1
@@ -97,7 +93,16 @@ while True:
             y -= 1
         elif move == 'DOWN':
             y += 1
+
         print(x,y)
+
+        if (x, y) == monster:
+            print('Oh no! You found the monster!')
+            break
+        if (x, y) == door:
+            print('You win! You found the door and escaped!')
+            break
+
     else:
         print("That's not a valid move. Try {}.".format(check_bounds()))
 
