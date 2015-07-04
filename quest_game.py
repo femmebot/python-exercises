@@ -105,7 +105,7 @@ while True:
             break
 
     else:
-        print("That's not a valid move. Try {}.".format(check_bounds()))
+        print("That's not a valid move.")
 
     check_bounds()
 
