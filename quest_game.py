@@ -33,10 +33,10 @@ def generate_locations():
 
 
 def game_rules():
-    print("You're in a 6x6 room and you need to find the door to escape.")
-    print("You may enter UP, DOWN, LEFT or RIGHT to move.")
+    print("\nInstructions: \n\nYou're in a 6x6-cell room where you need to find the door to escape.")
+    print("Type 'UP', 'DOWN', 'LEFT' or 'RIGHT' to move.")
     print("But, be careful. There's also a monster in one of the cells.")
-    print("Type HELP to view these instructions, QUIT to end the game.")
+    print("Type 'HELP' to view these instructions and 'QUIT' to end the game.")
 
 
 # Get player's current location
@@ -58,19 +58,20 @@ def check_bounds():
     # If player y-coordinate is at 6, remove DOWN
     if y == 6:
         moves.remove('DOWN')
-    print('Your current position is: {}, {}. You can move {}.'.format(x, y, moves))
+    print('\nYour current position is: {}, {}. \nYou can move {}.\n'.format(x, y, moves))
     return moves
 
 
 # generate the coordinates for the game
 game_coords = make_grid()
-print(make_grid())
+# print(make_grid())
 
 # generate the coordinates for the door and the monster
 door, monster, player = generate_locations()
-print('door: {} monster: {} player: {}'.format(door, monster, player))
+# print('door: {} monster: {} player: {}'.format(door, monster, player))
 x, y = player
 
+game_rules()
 check_bounds()
 
 while True:
