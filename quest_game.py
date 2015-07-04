@@ -67,7 +67,7 @@ def check_bounds():
     # If player y-coordinate is at 6, remove DOWN
     if player[1] == 6:
         moves.remove('DOWN')
-    print('Your current position is: {}. You can move {}.'.format(player, list(moves)))
+    print('Your current position is: {}. You can move {}.'.format(player, moves))
     return moves
 
 
@@ -87,18 +87,18 @@ def move(your_move):
 
 
 #######
-
-my_list = list(range(1, 51))
-# my_int = int(input('> '))
-my_int = random.randint(1,10)
-
-def nchoices(my_iterable, n):
-    counter = 0
-    choices = []
-    while counter < n:
-        choices.append(random.choice(my_iterable))
-        counter += 1
-    return(choices)
-
-nchoices(my_list, my_int)
-print(nchoices(my_list, my_int))
+#
+# my_list = list(range(1, 51))
+# # my_int = int(input('> '))
+# my_int = random.randint(1,10)
+#
+# def nchoices(my_iterable, n):
+#     counter = 0
+#     choices = []
+#     while counter < n:
+#         choices.append(random.choice(my_iterable))
+#         counter += 1
+#     return(choices)
+#
+# nchoices(my_list, my_int)
+# print(nchoices(my_list, my_int))
