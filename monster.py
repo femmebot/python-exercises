@@ -1,5 +1,7 @@
 import random
 
+from combat import Combat
+
 COLORS = ['red', 'blue', 'yellow', 'green']
 
 
@@ -7,7 +9,7 @@ COLORS = ['red', 'blue', 'yellow', 'green']
 # objects or classes map to mental models
 
 # class Monster:
-class Monster(object):
+class Monster(Combat):
     min_hit_points = 1
     max_hit_points = 1
     min_experience = 1
