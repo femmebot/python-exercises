@@ -27,6 +27,12 @@ class Monster(object):
         self.experience = random.randint(self.min_experience, self.max_experience)
         self.color = random.choice(COLORS)
 
+    def __str__(self):  # magic method that controls what happens when an object is turned into a string
+        return '{} {}, HP: {}, XP: {}'.format(self.color.title(),
+        self.__class__.__name__,
+        self.hit_points,
+        self.experience)
+
         for key, value in kwargs.items():  # creates new attribute and value in console
             setattr(self, key, value)  #object/instance we want to set attribute on which is self
 
