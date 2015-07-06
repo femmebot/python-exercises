@@ -1,17 +1,60 @@
+import random
+
+COLORS = ['red', 'blue', 'yellow', 'green']
+
+
 # everything in Python is an object
 # objects or classes map to mental models
 
 # class Monster:
 class Monster(object):
-    # class attributes
-    hit_points = 1
-    color = 'yellow'
+    min_hit_points = 1
+    max_hit_points = 1
+    min_experience = 1
+    max_experience =1
     weapon = 'sword'
     sound = 'roar'
+    # class attributes
+    # hit_points = 1
+    # color = 'yellow'
+    # weapon = 'sword'
+    # sound = 'roar'
+
+    def __init__(self, **kwargs):
+        # self.hit_points = kwargs.get('hit_points', 5)
+        # self.sound = kwargs.get('sound', 'roar')
+        self.hit_points = random.randint(self.min_hit_points, self.max_hit_points)
+        self.experience = random.randint(self.min_experience, self.max_experience)
+        self.color = random.choice(COLORS)
+
+        for key, value in kwargs.items():  # creates new attribute and value in console
+            setattr(self, key, value)  #object/instance we want to set attribute on which is self
 
     # Methods are functions that belong to classes
     def battlecry(self):
         return self.sound.upper()
+
+class Goblin(Monster):
+    # pass
+    max_hit_points = 3
+    max_experience = 2
+    sound = 'squeak'
+
+class Troll(Monster):
+    min_hit_points = 3
+    max_hit_points = 5
+    max_experience = 2
+    max_experience = 6
+    sound = 'growl'
+
+class Dragon(Monster):
+    min_hit_points = 5
+    max_hit_points = 10
+    min_experience = 6
+    max_experience = 10
+    sound = 'raaaaaaaaaaa'
+
+
 
 # to import in console 'from monster import Monster'
 # from [docname] import [classname]
@@ -33,6 +76,20 @@ class Monster(object):
 # >>> jabberwock.sound = 'tweet'
 # >>> jabberwock.battlecry()
 # 'TWEET'
+
+###############
+# Inheritance
+###############
+# >>> from monster import Monster
+# >>> zombie = Monster()
+# >>> zombie.color
+# 'blue'
+# >>> jab = Monster(color='yellow', sound='cry', power='2x')
+# >>> jab.power
+# '2x'
+# >>> jab.color
+# 'yellow'
+# >>>
 
 class Store(object):
     open = 9
