@@ -1,3 +1,5 @@
+import sys
+
 from character import Character
 # from monster import Goblin, Troll, Dragon
 from monster import Dragon
@@ -45,14 +47,34 @@ class Game(object):
 
     def player_turn(self):
         # let the player attack, rest or quit
+        player_choice = input('[A]ttack, [R]est, or [Q]uit?').lower()
         # if they attack:
+        if player_choice == 'a':
+            print("You're attacking {}.".format(self.monster))
             # see if the attack is successful
+            if self.player.attack():
                 # If so, see if the monster dodges
+                if self.monster.dodge():
                     # If dodged, print that
+                    print('{} dodged the attack'.format(self.monster))
                     # If not dodged, subtract the right number of hit points from the monster
-                # If they rest, call the player rest() method
-                # If they quit, end game
-                # If they pick anything else, re-run this method
+                else:
+                    if self.player.leveled_up():
+                        self.monster.hit_point -= 2
+                    else:
+                        self.monster.hit_points -= 1
+                    print('You attacked and hit {} with your {}'.format(self.monster, self.player.weapon))
+            else:
+                print("You missed.")
+        # If they rest, call the player rest() method
+        elif player.choice == 'r':
+            self.player.rest()
+        # If they quit, end game
+        elif player.choice == 'q'
+            sys.exit()
+        # If they pick an ything else, re-run this method
+        else:
+            self.player_turn()
 
     def cleanup(self):
         # If the monster has no more hit points:
