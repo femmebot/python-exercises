@@ -28,7 +28,7 @@ class Game(object):
             # if so, tell the player
             print("{} is attacking!".format(self.monster)
             # Check if the player wants to dodge
-            if input('Dodge? Y/N').lower() == 'y':
+            if input('Dodge? Y/N ').lower() == 'y':
                 # If so, check whether dodging was successful
                 if self.player.dodge():
                     # If it is, move on
