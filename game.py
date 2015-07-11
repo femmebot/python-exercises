@@ -26,7 +26,7 @@ class Game(object):
         # check to see if monster attacks
         if self.monster.attack():
             # if so, tell the player
-            print("{} is attacking!".format(self.monster)
+            print("{} is attacking!".format(self.monster))
             # Check if the player wants to dodge
             if input('Dodge? Y/N ').lower() == 'y':
                 # If so, check whether dodging was successful
@@ -70,7 +70,7 @@ class Game(object):
         elif player.choice == 'r':
             self.player.rest()
         # If they quit, end game
-        elif player.choice == 'q'
+        elif player.choice == 'q':
             sys.exit()
         # If they pick an ything else, re-run this method
         else:
