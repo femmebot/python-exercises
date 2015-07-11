@@ -28,7 +28,7 @@ class Game(object):
             # if so, tell the player
             print("{} is attacking!".format(self.monster)
             # Check if the player wants to dodge
-            if input('Dodge? Y/N').lower() == 'y':
+            if input('Dodge? Y/N ').lower() == 'y':
                 # If so, check whether dodging was successful
                 if self.player.dodge():
                     # If it is, move on
@@ -78,20 +78,31 @@ class Game(object):
 
     def cleanup(self):
         # If the monster has no more hit points:
+        if self.monster.hit_points <= 0:
             # increase player's experience
+            self.player.experience += self.monster.experience
             # print a message
+            print("You killed {}.".format(self.monster))
             # get a new monster
+            self.monster = self.get_next_monster()
 
     def __init__(self):
         self.setup()
 
         while self.player.hitpoints and (self.monster or self.monsters):
+            print('\n'+'='*20)
             print(self.player)
             self.monster.turn()
+            print('-'*20)
             self.player_turn()
             self.cleanup()
+            print('\n'+'='*20)
 
         if self.player.hitpoints:
             print('You win!')
         elif self.monster or self.monsters:
             print('You lose.')
+        sys.exit()
+
+
+Game()
