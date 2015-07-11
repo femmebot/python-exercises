@@ -12,7 +12,7 @@ class Character(Combat):
         roll = random.randint(1, self.attack_limit)
         if self.weapon == 'sword':
             roll += 1
-        elif self.weapon == 'axe'
+        elif self.weapon == 'axe':
             roll += 2
         return roll > 4
 

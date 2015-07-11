@@ -89,16 +89,16 @@ class Game(object):
     def __init__(self):
         self.setup()
 
-        while self.player.hitpoints and (self.monster or self.monsters):
+        while self.player.hit_points and (self.monster or self.monsters):
             print('\n'+'='*20)
             print(self.player)
-            self.monster.turn()
+            self.monster_turn()
             print('-'*20)
             self.player_turn()
             self.cleanup()
             print('\n'+'='*20)
 
-        if self.player.hitpoints:
+        if self.player.hit_points:
             print('You win!')
         elif self.monster or self.monsters:
             print('You lose.')
