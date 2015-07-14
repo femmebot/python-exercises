@@ -67,10 +67,10 @@ class Game(object):
             else:
                 print("You missed.")
         # If they rest, call the player rest() method
-        elif player.choice == 'r':
+        elif player_choice == 'r':
             self.player.rest()
         # If they quit, end game
-        elif player.choice == 'q':
+        elif player_choice == 'q':
             sys.exit()
         # If they pick an ything else, re-run this method
         else:
