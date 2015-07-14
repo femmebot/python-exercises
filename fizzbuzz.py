@@ -8,7 +8,12 @@
 # Each number should be printed on a new line.
 
 num = 1
-upper_limit = int(input('Enter a number: '))
+upper_limit = 0
+
+try:
+    upper_limit = int(input('Enter a number > 0: '))
+except:
+    print("That's not a number > 0.")
 
 while num <= upper_limit:
     if num % 3 == 0 and num % 5 == 0:
